@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from datasets import load_dataset
-from transformers import AutoTokenizer
+from transformers import BertTokenizer
 
 # ==========================================
 # 1. GPU SETUP & HUGGING FACE DATA
@@ -14,7 +14,7 @@ print(f"Training on device: {device}")
 
 print("Loading Banking77 Dataset and Tokenizer...")
 # We use a standard lightweight tokenizer
-tokenizer = AutoTokenizer.from_pretrained("prajjwal1/bert-tiny")
+tokenizer = BertTokenizer.from_pretrained("prajjwal1/bert-tiny")
 raw_dataset = load_dataset("banking77")
 
 # ==========================================
